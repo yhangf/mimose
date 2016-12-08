@@ -1,9 +1,9 @@
-
 '''
 author: Yanghangfeng
 date: 2016.10.24
 '''
 import numpy as np
+
 
 class GM11:
     '''
@@ -14,6 +14,7 @@ class GM11:
     whether the model is applicable to data
     gm11Predict(): Prediction function
     '''
+
     def __init__(self, sequence, phio=0.5):
         self.sequence = np.array(sequence)
         self.a_hat = self.__getParameters()
@@ -47,14 +48,16 @@ class GM11:
 
         # Correlation degree test
         elif method == 'Correlation_degree_test':
-            yita = (min(delt_0) + self.phio * max(delt_0)) / (delt_0 + self.phio * max(delt_0))
+            yita = (min(delt_0) + self.phio * max(delt_0)) / (
+                delt_0 + self.phio * max(delt_0))
             R = np.mean(yita)
             return R
 
         # Posterior difference test
         elif method == 'Posterior_difference_test':
             C = np.std(delt_0) / np.std(self.sequence)
-            P = np.sum((delt_0 - np.mean(delt_0)) < 0.674 * np.std(self.sequence)) / len(delt_0)
+            P = np.sum((delt_0 - np.mean(delt_0)) < 0.674 *
+                       np.std(self.sequence)) / len(delt_0)
             if P > 0.95 and C < 0.35:
                 print('Model good')
             elif P > 0.80 and C < 0.50:
@@ -68,13 +71,14 @@ class GM11:
         '''
         Used to predict the outcome
         '''
-        X_hat = [(self.sequence[0] - (self.a_hat[1] / self.a_hat[0])) *\
-                 np.exp(-self.a_hat[0] * k) + self.a_hat[1] / self.a_hat[0]\
+        X_hat = [(self.sequence[0] - (self.a_hat[1] / self.a_hat[0])) *
+                 np.exp(-self.a_hat[0] * k) + self.a_hat[1] / self.a_hat[0]
                   for k in range(n)]
         # The decreasing sequence generation
         X0_hat = np.diff(np.array(X_hat))
         X0_hat = np.insert(X0_hat, 0, X_hat[0])
         return X0_hat
+
 
 if __name__ == '__main__':
     X0 = [26.7, 31.5, 32.8, 34.1, 35.8, 37.5]
