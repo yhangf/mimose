@@ -1,9 +1,34 @@
-##### 1. [binary_search.py](https://github.com/Fenghuapiao/python_algorithms/blob/master/binary_search.py): 二分查找算法
-##### 2. [bubble_sort.py](https://github.com/Fenghuapiao/python_algorithms/blob/master/bubble_sort.py): 冒泡排序算法
-##### 3. [dijkstra_short_path.py](https://github.com/Fenghuapiao/python_algorithms/blob/master/dijkstra_short_path.py): 最短路径算法
-##### 4. [GM11_model.py](https://github.com/Fenghuapiao/python_algorithms/blob/master/GM11_model.py): 灰色预测算法
-##### 5. [insert_sort.py](https://github.com/Fenghuapiao/python_algorithms/blob/master/insert_sort.py): 插入排序算法
-##### 6. [queue_Josproblems.py](https://github.com/Fenghuapiao/python_algorithms/blob/master/queue_Josproblems.py): 用队列解决约瑟夫问题
-##### 7. [quick_sort.py](https://github.com/Fenghuapiao/python_algorithms/blob/master/quick_sort.py): 快速排序算法
-##### 8. [select_sort.py](https://github.com/Fenghuapiao/python_algorithms/blob/master/select_sort.py): 选择排序算法
-##### 9. [stack.py](https://github.com/Fenghuapiao/python_algorithms/blob/master/stack.py): 利用栈实现十进制转化为二进制算法
+```shell
+         _   .-')            _   .-')                  .-')      ('-.
+        ( '.( OO )_         ( '.( OO )_               ( OO ).  _(  OO)
+         ,--.   ,--.) ,-.-') ,--.   ,--.).-'),-----. (_)---\_)(,------.
+         |   `.'   |  |  |OO)|   `.'   |( OO'  .-.  '/    _ |  |  .---'
+         |         |  |  |  \|         |/   |  | |  |\  :` `.  |  |
+         |  |'.'|  |  |  |(_/|  |'.'|  |\_) |  |\|  | '..`''.)(|  '--.
+         |  |   |  | ,|  |_.'|  |   |  |  \ |  | |  |.-._)   \ |  .--'
+         |  |   |  |(_|  |   |  |   |  |   `'  '-'  '\       / |  `---.
+         `--'   `--'  `--'   `--'   `--'     `-----'  `-----'  `------'
+```
+
+
+
+# <p align="center">mimose</p>
+
+<p align="center">
+ <a href="https://github.com/yhangf/mimose/blob/master/LICENSE">
+        <img src="https://img.shields.io/cocoapods/l/EFQRCode.svg?style=flat">
+        </a>
+ <a href="https://zh.wikipedia.org/wiki/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0">
+        <img src="https://img.shields.io/badge/ML-mimose-ff69b4.svg">
+        </a>
+   <a href="">
+        <img src="https://img.shields.io/badge/Tobe-continued-orange.svg">
+        </a>
+   <a href="https://github.com/yhangf/mimose">
+    <img src="https://img.shields.io/github/stars/yhangf/mimose.svg?style=social&label=Star">
+        </a>
+    <a href="https://github.com/yhangf/mimose">
+    <img src="https://img.shields.io/github/forks/yhangf/mimose.svg?style=social&label=Fork">
+        </a>
+</p>
+
