@@ -7,11 +7,11 @@ class lassoRegression(linearModel):
 
     def __init__(self, n_iter=1000, alpha=0.5, threshold=0.1):
         """
-        :param n_iter: number of algorithm iterations.
+        :@param n_iter: number of algorithm iterations.
         :type n_iter: int.
-        :param alpha: regularization coefficient.
+        :@param alpha: regularization coefficient.
         :type alpha: alpha in [0, 1].
-        :param threshold: stop iteration condition.
+        :@param threshold: stop iteration condition.
         :type threshold: float number and threshold > 0.
         """
         super().__init__()
@@ -26,9 +26,9 @@ class lassoRegression(linearModel):
     def coordinate_descent(self, X, y):
         """Get lasso regression coefficients.
 
-        :param X: features matrix.
+        :@param X: features matrix.
         :type X: the n x m dimension np.array.
-        :param y: real value vector.
+        :@param y: real value vector.
         :type y: the n dimension column vector.
         :return: parameters of the lasso regression model.
         :rtype: the t dimension np.array.

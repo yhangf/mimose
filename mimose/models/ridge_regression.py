@@ -7,7 +7,7 @@ class ridgeRegression(linearModel):
 
     def __init__(self, alpha=0.5):
         """
-        :param alpha: regularization coefficient.
+        :@param alpha: regularization coefficient.
         :type alpha: alpha in [0, 1].
         """
         super().__init__()
@@ -16,9 +16,9 @@ class ridgeRegression(linearModel):
     def fit(self, X, y):
         """Training the ridge regression model.
 
-        :param X: features matrix.
+        :@param X: features matrix.
         :type X: the n x m dimension np.array.
-        :param y: real value vector.
+        :@param y: real value vector.
         :type y: the n dimension column vector.
         :return: parameters of the ridge regression model.
         :rtype: the t dimension np.array.

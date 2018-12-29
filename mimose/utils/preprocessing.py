@@ -12,7 +12,7 @@ class standardScaler:
     def __call__(self, X):
         """Get standardized data.
 
-        :param X: a vector or matrix that needs to be mapping.
+        :@param X: a vector or matrix that needs to be mapping.
         :type X: np.array or list.
         :return: standardized data.
         :rtype: np.array.
@@ -30,9 +30,9 @@ class intervalScaler:
     def __init__(self, left_value=0, right_value=1):
         """Initialize the interval range.
 
-        :param left_value: the lower bound of the interval.
+        :@param left_value: the lower bound of the interval.
         :type left_value: numeric data.
-        :param right_value: the upper bound of the interval.
+        :@param right_value: the upper bound of the interval.
         :type right_value: numeric data.
         """
         self.left_value = left_value
@@ -41,7 +41,7 @@ class intervalScaler:
     def __call__(self, X):
         """get reduction of data.
 
-        :param X: a vector or matrix that needs to be mapping.
+        :@param X: a vector or matrix that needs to be mapping.
         :type X: np.array or list.
         :return: data after reduction.
         :rtype: np.array.
