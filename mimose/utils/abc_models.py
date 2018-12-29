@@ -16,7 +16,7 @@ class linearModel(metaclass=ABCMeta):
 
     def predict(self, X):
         if not hasattr(self, "coef"):
-            raise("Please run `fit` before predict!")
+            raise Exception("Please run `fit` before predict!")
         X = self.scaler(X)
-        X = np.c_[np.ones(X.shape[0]), X]
-        return X @ coef_
+        X_ = np.c_[np.ones((X.shape[0], 1)), X]
+        return X_ @ self.coef

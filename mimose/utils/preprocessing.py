@@ -4,6 +4,11 @@ import numpy as np
 class standardScaler:
     """Standardized data."""
 
+    def fit(self, X):
+        self.mean = np.mean(X, axis=0)
+        self.var = np.var(X, axis=0)
+        return self
+
     def __call__(self, X):
         """Get standardized data.
 
@@ -12,7 +17,11 @@ class standardScaler:
         :return: standardized data.
         :rtype: np.array.
         """
-        return (X - np.mean(X, axis=0)) / (np.sqrt(np.var(X, axis=0)))
+        if not all([hasattr(self, "mean"),
+                    hasattr(self, "var")]):
+            raise Exception("Please run `fit` before predict!")
+
+        return (X - self.mean) / (np.sqrt(self.var))
 
 
 class intervalScaler:

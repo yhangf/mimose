@@ -13,11 +13,13 @@ class linearRegression(linearModel):
         :param X: features matrix.
         :type X: the n x m dimension np.array.
         :param y: real value vector.
-        :type y: the n dimension vector.
+        :type y: the n dimension column vector.
         :return: parameters of the linear regression model.
         :rtype: the t dimension np.array.
         """
-        X = self.scaler(X)
-        X = np.c_[np.ones(X.shape[0]), X]
-        self.coef = np.linalg.pinv(X.T @ X) @ X.T @ y
-        return self.coef
+        self.scaler.fit(X)
+        X = self.scaler(X)        
+        y = y.reshape(-1, 1)
+        X_ = np.c_[np.ones((X.shape[0], 1)), X]
+        self.coef = np.linalg.pinv(X_.T @ X_) @ X_.T @ y
+        return self
