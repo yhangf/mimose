@@ -14,12 +14,16 @@ class lassoRegression(linearModel):
         :@param threshold: stop iteration condition.
         :type threshold: float number and threshold > 0.
         """
-        super().__init__()
+
         self.n_iter = n_iter
         self.alpha = alpha
         self.threshold = threshold
 
     def fit(self, X, y):
+        """Via coordinate descent training
+           lasso regression.
+        """
+
         self.coef = self.coordinate_descent(X, y)
         return self
 
@@ -27,18 +31,16 @@ class lassoRegression(linearModel):
         """Get lasso regression coefficients.
 
         :@param X: features matrix.
-        :type X: the n x m dimension np.array.
+        :type X: the N x M dimension np.array.
         :@param y: real value vector.
-        :type y: the n dimension column vector.
+        :type y: the N dimension column vector.
         :return: parameters of the lasso regression model.
-        :rtype: the t dimension np.array.
+        :rtype: the T dimension np.array.
         """
-        self.scaler.fit(X)
-        X = self.scaler(X)
+
         y = y.reshape(-1, 1)
         X_ = np.c_[np.ones(X.shape[0]), X]
         coef = np.zeros((X_.shape[1], 1))
-
         while self.n_iter:
             z = np.sum(X_ * X_, axis=0)
             _ = np.zeros((X_.shape[1], 1))
