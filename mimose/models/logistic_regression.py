@@ -1,10 +1,11 @@
 import random
 
 import numpy as np
+from ..utils.base import baseModel
 from ..utils.func import sigmoid, judge
 
 
-class logisticRegression:
+class logisticRegression(baseModel):
     """Logistic regression model."""
 
     def __init__(self, max_epoch=1000, epslion=1e-6,
@@ -25,6 +26,7 @@ class logisticRegression:
         :@param batch: samples of SGD method randomly selected.
         :type batch: int.
         """
+        
         self.max_epoch = max_epoch
         self.epslion = epslion
         self.lr = lr
@@ -35,6 +37,7 @@ class logisticRegression:
         """Via gradient descent training logistic
            regression.
         """
+
         if self.optimizer == "gradient_descent":
             self.weight = self.gradient_descent(X, y)
         else:
@@ -51,6 +54,7 @@ class logisticRegression:
         :return: the weight parameters.
         :rtype: the N dimension np.array.
         """
+
         X_ = np.c_[np.ones((X.shape[0], 1)), X]
         weight = np.random.rand(X_.shape[1], 1)
         while self.max_epoch:
@@ -66,6 +70,7 @@ class logisticRegression:
         """Via Stochastic gradient descent algorithm
            get the weight parameters.
         """
+
         if batch > X.shape[0]:
             raise Exception("Batch greater than the X dimension!")
 
@@ -92,6 +97,7 @@ class logisticRegression:
         :return: class label vector.
         :rtype: vector and value in {0, 1}.
         """
+
         if not hasattr(self, "weight"):
             raise Exception("Please run `fit` before predict!")
 

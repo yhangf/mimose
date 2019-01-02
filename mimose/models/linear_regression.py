@@ -13,6 +13,7 @@ class linearRegression(linearModel):
         :type y: the N dimension column vector.
         :return: self.
         """
+        
         y = y.reshape(-1, 1)
         X_ = np.c_[np.ones((X.shape[0], 1)), X]
         self.coef = np.linalg.pinv(X_.T @ X_) @ X_.T @ y

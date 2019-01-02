@@ -1,13 +1,12 @@
 import numpy as np
-from abc import ABCMeta, abstractmethod
+from .base import baseModel
 
 
-class linearModel(metaclass=ABCMeta):
+class linearModel(baseModel):
     """Abstract base class of Linear Model."""
 
-    @abstractmethod
     def fit(self, X, y):
-        """fit function"""
+        """Fit function"""
         pass
 
     def predict(self, X):

@@ -1,7 +1,9 @@
 import numpy as np
 
+from ..utils.base import baseModel
 
-class GM11:
+
+class GM11(baseModel):
     """GM11 for grey model"""
 
     def __init__(self, phio=0.5):
@@ -37,6 +39,7 @@ class GM11:
                       Correlation_degree_test, Posterior_difference_test},
                       default is Posterior_difference_test.
         """
+
         X0_hat = self.predict(len(self.sequence))
         delt_0 = abs(self.sequence - X0_hat)
 
@@ -47,8 +50,8 @@ class GM11:
 
         # Correlation degree test
         elif method == "Correlation_degree_test":
-            yita = (min(delt_0) + self.phio * max(delt_0)) / (
-                delt_0 + self.phio * max(delt_0))
+            yita = ((min(delt_0) + self.phio * max(delt_0)) /
+                    (delt_0 + self.phio * max(delt_0)))
             R = np.mean(yita)
             return R
 
@@ -74,6 +77,7 @@ class GM11:
         :return: predict sequential.
         :rtype: np.array(n X 1).
         """
+
         if not hasattr(self, "a_hat"):
             raise Exception("Please run `fit` before predict!")
 
