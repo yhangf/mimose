@@ -5,7 +5,7 @@ from ..utils.base import baseModel
 
 
 class KMeans(baseModel):
-    """K-means algorithm"""
+    """K-means algorithm."""
 
     def __init__(self, *, n_clusters, max_epoch=200,
                  epslion=1e-6):
@@ -52,7 +52,7 @@ class KMeans(baseModel):
         :return: belongs to the category.
         :rtype: np.array(M X 1), value in int.
         """
-        
+
         _clusters = []
         for x in X:
             _distances = np.linalg.norm(x - self.centre_vec, axis=1)
