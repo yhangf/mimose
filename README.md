@@ -30,7 +30,9 @@
     <img src="https://img.shields.io/github/forks/yhangf/mimose.svg?style=social&label=Fork">
         </a>
 </p>
+## :speech_balloon:Introduction
 
+> I've written a lot about machine learning essay [ML-NOTE](https://github.com/yhangf/ML-NOTE), therefore, I want to make a summary of machine learning theories in the past through mimose project.
 
 ## :sparkling_heart:Included algorithms
 
