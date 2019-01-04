@@ -28,6 +28,7 @@ class lassoRegression(linearModel):
         self.coef = self.coordinate_descent(X, y)
         return self
 
+
     def coordinate_descent(self, X, y):
         """Get lasso regression coefficients.
 
