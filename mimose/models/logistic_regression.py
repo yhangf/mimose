@@ -8,12 +8,12 @@ from ..utils.func import sigmoid, judge
 class logisticRegression(baseModel):
     """Logistic regression model."""
 
-    def __init__(self, max_epoch=1000, epslion=1e-6,
+    def __init__(self, max_iter=1000, epslion=1e-6,
                  lr=1e-3, optimizer="gradient_descent",
                  batch=200):
         """
-        :@param max_epoch: maximum number of iterations.
-        :type max_epoch: int.
+        :@param max_iter: maximum number of iterations.
+        :type max_iter: int.
         :@param epslion: if the distance between new weight and
                          old weight is less than epslion, the process
                          of traing will break.
@@ -26,8 +26,8 @@ class logisticRegression(baseModel):
         :@param batch: samples of SGD method randomly selected.
         :type batch: int.
         """
-        
-        self.max_epoch = max_epoch
+
+        self.max_iter = max_iter
         self.epslion = epslion
         self.lr = lr
         self.optimizer = optimizer
@@ -57,13 +57,13 @@ class logisticRegression(baseModel):
 
         X_ = np.c_[np.ones((X.shape[0], 1)), X]
         weight = np.random.rand(X_.shape[1], 1)
-        while self.max_epoch:
+        while self.max_iter:
             e_vec = sigmoid(X_ @ weight) - y.reshape(-1, 1)
             _weight = weight - self.lr * X_.T @ e_vec
             if np.linalg.norm(weight - _weight) < self.epslion:
                 return _weight
             weight = _weight
-            self.max_epoch -= 1
+            self.max_iter -= 1
         return weight
 
     def SGD(self, X, y):
@@ -79,14 +79,14 @@ class logisticRegression(baseModel):
         weight = np.random.rand(X_.shape[1] - 1, 1) # added a dimension, so subtract one.
         index_list = list(range(X_.shape[0]))
 
-        while self.max_epoch:
+        while self.max_iter:
             index = random.sample(index_list, self.batch)
             batch_e_vec = sigmoid(X_[index, :-1] @ weight) - y[index]
             _weight = weight - self.lr * X_[index, :-1].T @ batch_e_vec
             if np.linalg.norm(weight - _weight) < self.epslion:
                 return _weight
             weight = _weight
-            self.max_epoch -= 1
+            self.max_iter -= 1
         return weight
 
     def predict(self, X):
