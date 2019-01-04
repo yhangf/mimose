@@ -9,6 +9,7 @@ class linearModel(baseModel):
         """Fit function"""
         pass
 
+
     def predict(self, X):
         if not hasattr(self, "coef"):
             raise Exception("Please run `fit` before predict!")

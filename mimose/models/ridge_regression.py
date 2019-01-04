@@ -13,6 +13,7 @@ class ridgeRegression(linearModel):
 
         self.alpha = alpha
 
+
     def fit(self, X, y):
         """Training the ridge regression model.
 

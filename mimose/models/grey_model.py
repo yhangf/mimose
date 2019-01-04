@@ -14,6 +14,7 @@ class GM11(baseModel):
 
         self.phio = phio
 
+
     def fit(self, sequence):
         """Training GM(1,1) model
 
@@ -29,6 +30,7 @@ class GM11(baseModel):
         a_hat = np.dot(np.linalg.inv(np.dot(B.T, B)), np.dot(B.T, Y))
         self.a_hat = a_hat
         return self
+
 
     def gm11_predict_test(self, method="Posterior_difference_test"):
         """Some model checking methods are provided to detect
@@ -68,6 +70,7 @@ class GM11(baseModel):
                 print("Barely qualified")
             else:
                 print("Model bad")
+
 
     def predict(self, n):
         """Predict function.

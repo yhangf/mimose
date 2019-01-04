@@ -33,6 +33,7 @@ class logisticRegression(baseModel):
         self.optimizer = optimizer
         self.batch = batch
 
+
     def fit(self, X, y):
         """Via gradient descent training logistic
            regression.
@@ -43,6 +44,7 @@ class logisticRegression(baseModel):
         else:
             self.weight = self.SGD(X, y)
         return self
+
 
     def gradient_descent(self, X, y):
         """Get the weight parameters.
@@ -66,6 +68,7 @@ class logisticRegression(baseModel):
             self.max_iter -= 1
         return weight
 
+
     def SGD(self, X, y):
         """Via Stochastic gradient descent algorithm
            get the weight parameters.
@@ -88,6 +91,7 @@ class logisticRegression(baseModel):
             weight = _weight
             self.max_iter -= 1
         return weight
+
 
     def predict(self, X):
         """Predict class label.

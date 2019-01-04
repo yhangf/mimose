@@ -12,6 +12,7 @@ def sigmoid(X):
 
     return 1 / (1 + np.exp(-X))
 
+
 def sigmoid_gradient(X):
     """Gradient of the sigmoid function.
 
@@ -22,6 +23,7 @@ def sigmoid_gradient(X):
     """
 
     return sigmoid(X) * (1 - sigmoid(X))
+
 
 def ReLu(X):
     """ReLu function.
@@ -34,6 +36,7 @@ def ReLu(X):
 
     return np.where(X < 0, 0, X)
 
+
 def judge(X):
     """predict class label.
 
@@ -45,9 +48,10 @@ def judge(X):
 
     return np.where(X < 0.5, 0, 1)
 
+
 def rsign(X):
     """Antisymmetric symbolic functions.
-    
+
     :@parma X: raw matrix data.
     :type X: np.array(M X N).
     :return: the processed matrix.

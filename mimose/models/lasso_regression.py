@@ -19,6 +19,7 @@ class lassoRegression(linearModel):
         self.alpha = alpha
         self.threshold = threshold
 
+
     def fit(self, X, y):
         """Via coordinate descent training
            lasso regression.

@@ -9,6 +9,7 @@ class standardScaler:
         self.var = np.var(X, axis=0)
         return self
 
+
     def __call__(self, X):
         """Get standardized data.
 
@@ -17,6 +18,7 @@ class standardScaler:
         :return: standardized data.
         :rtype: np.array.
         """
+
         if not all([hasattr(self, "mean"),
                     hasattr(self, "var")]):
             raise Exception("Please run `fit` before predict!")
@@ -37,6 +39,7 @@ class intervalScaler:
         """
         self.left_value = left_value
         self.right_value = right_value
+
 
     def __call__(self, X):
         """get reduction of data.

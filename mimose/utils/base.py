@@ -9,6 +9,7 @@ class baseModel(metaclass=ABCMeta):
         """Fit function."""
         pass
 
+
     @abstractmethod
     def predict(self, X):
         """Predict function."""

@@ -9,8 +9,9 @@ class PCA:
         :@param n_components: number of features.
         :type n_components: int.
         """
-        
+
         self.n_components = n_components
+
 
     def fit_transform(self, X):
         """Get the data after dimension reduction.

@@ -18,6 +18,7 @@ class KNeighborClassifer(baseModel):
         self.n_neighbor = n_neighbor
         self.metric = metric
 
+
     def fit(self, X, y):
         """fake fit function.
 
@@ -32,6 +33,7 @@ class KNeighborClassifer(baseModel):
         if self.n_neighbor > self.y.shape[0]:
             self.n_neighbor = self.y.shape[0]
         return self
+
 
     def _predict(self, x):
         """Predict the label of single record.

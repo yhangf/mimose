@@ -22,6 +22,7 @@ class KMeans(baseModel):
         self.max_iter = max_iter
         self.epslion = epslion
 
+
     def fit(self, X):
         """
         :@param X: raw data matrix.
@@ -44,6 +45,7 @@ class KMeans(baseModel):
 
             self.max_iter -= 1
         return self
+
 
     def predict(self, X):
         """Return belongs to the category.

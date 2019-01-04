@@ -7,18 +7,33 @@ from ..utils.base import baseModel
 class perceptronClassifier(baseModel):
     """Perceptron algorithm."""
 
-    def __init__(self, max_iter=100, lr=0.005):
+    def __init__(self, max_iter=100, lr=0.005,
+                 method="undual"):
         """
         :@param max_iter: maximum number of iterations.
         :type max_iter: int.
         :@param lr: learn rate.
         :type lr: float, value in (0, 1].
+        :@param method: training method, optional parameters,
+                        include undual method and dual method.
+        :type method: string, value in {undual, undual} default
+                      method is undual.
         """
 
         self.max_iter = max_iter
         self.lr = lr
+        self.method = method
+
 
     def fit(self, X, y):
+        if self.method == "dual":
+            self.dual_method_train(X, y)
+        else:
+            self.undual_method_train(X, y)
+        return self
+
+
+    def undual_method_train(self, X, y):
         """
         :@param X: feature matrix.
         :type X: np.array(M X N).
@@ -41,7 +56,33 @@ class perceptronClassifier(baseModel):
                 self.bias += self.lr * y[index]
             self.max_iter -= 1
 
-        return self
+
+    def dual_method_train(self, X, y):
+        """
+        :@param X: feature matrix.
+        :type X: np.array(M X N).
+        :@param y: class label.
+        :type y: int, value in {-1, +1}
+        """
+
+        y = y.reshape(-1, 1)
+        gram = X @ X.T
+        n_samples, n_features = X.shape
+        alpha = np.zeros((n_samples, 1))
+        self.bias = 0
+
+        while self.max_iter:
+            index = np.random.randint(n_samples)
+            g = gram[index].reshape(-1, 1)
+            judge_point = y[index] * (np.sum(alpha * y * g)
+                                      + self.bias)
+            if judge_point <= 0:
+                alpha[index] += self.lr
+                self.bias += self.lr * y[index]
+            self.max_iter -= 1
+
+        self.weights = X.T @ (alpha * y)
+
 
     def predict(self, X):
         """

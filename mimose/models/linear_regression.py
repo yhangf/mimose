@@ -1,6 +1,7 @@
 import numpy as np
 from ..utils.abc_models import linearModel
 
+
 class linearRegression(linearModel):
     """Linear Regression Model."""
 
