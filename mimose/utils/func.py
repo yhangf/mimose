@@ -47,6 +47,7 @@ def judge(X):
 
 def rsign(X):
     """Antisymmetric symbolic functions.
+    
     :@parma X: raw matrix data.
     :type X: np.array(M X N).
     :return: the processed matrix.
