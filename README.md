@@ -35,29 +35,24 @@
 ## :sparkling_heart:Included algorithms
 
 * ### Regression models:sparkles:
-    * [x] #### [linear regression](https://github.com/yhangf/mimose/blob/master/mimose/models/linear_regression.py)
-
-    * [x] #### [lasso regression](https://github.com/yhangf/mimose/blob/master/mimose/models/lasso_regression.py)
-
-    * [x] #### [ridge regression](https://github.com/yhangf/mimose/blob/master/mimose/models/ridge_regression.py)
-
-    * [x] #### [grey model](https://github.com/yhangf/mimose/blob/master/mimose/models/grey_model.py)
+    * [x] [linear regression](https://github.com/yhangf/mimose/blob/master/mimose/models/linear_regression.py)
+    * [x] [lasso regression](https://github.com/yhangf/mimose/blob/master/mimose/models/lasso_regression.py)
+    * [x] [ridge regression](https://github.com/yhangf/mimose/blob/master/mimose/models/ridge_regression.py)
+    * [x] [grey model](https://github.com/yhangf/mimose/blob/master/mimose/models/grey_model.py)
 
 * ### Classify models:star2:
 
-    - [x] #### [logistic regression](https://github.com/yhangf/mimose/blob/master/mimose/models/logistic_regression.py)
-
-    - [x] #### [perceptron](https://github.com/yhangf/mimose/blob/master/mimose/models/perceptron.py)
-
-    - [x] #### [knn](https://github.com/yhangf/mimose/blob/master/mimose/models/knn.py)
+    - [x] [logistic regression](https://github.com/yhangf/mimose/blob/master/mimose/models/logistic_regression.py)
+    - [x] [perceptron](https://github.com/yhangf/mimose/blob/master/mimose/models/perceptron.py)
+    - [x] [knn](https://github.com/yhangf/mimose/blob/master/mimose/models/knn.py)
 
 * ### Clustering models:fire:
 
-    - [x] #### [kmeans](https://github.com/yhangf/mimose/blob/master/mimose/models/kmeans.py)
+    - [x] [kmeans](https://github.com/yhangf/mimose/blob/master/mimose/models/kmeans.py)
 
 * ### Descending dimension methods:collision:
 
-    - [x] #### [pca](https://github.com/yhangf/mimose/blob/master/mimose/models/compress.py)
+    - [x] [pca](https://github.com/yhangf/mimose/blob/master/mimose/models/compress.py)
 
 
 
