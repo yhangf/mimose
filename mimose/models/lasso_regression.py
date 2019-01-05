@@ -1,4 +1,5 @@
 import numpy as np
+
 from ..utils.abc_models import linearModel
 
 

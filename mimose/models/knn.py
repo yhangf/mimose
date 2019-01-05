@@ -1,6 +1,7 @@
 import numpy as np
 
 from ..utils.base import baseModel
+from ..utils.preprocessing import matrix_type_cast
 
 
 class KNeighborClassifer(baseModel):
@@ -19,22 +20,22 @@ class KNeighborClassifer(baseModel):
         self.metric = metric
 
 
+    @matrix_type_cast
     def fit(self, X, y):
         """fake fit function.
 
         :@param X: features matrix.
-        :type X: the N x M dimension np.array.
+        :type X: the N x M dimension np.array or list.
         :@param y: class label vector.
         :type y: string or int.
         """
-
-        self.X = X.astype(float)
-        self.y = y.reshape(-1, 1)
+        self.X, self.y = X, y
         if self.n_neighbor > self.y.shape[0]:
             self.n_neighbor = self.y.shape[0]
         return self
 
 
+    @matrix_type_cast
     def _predict(self, x):
         """Predict the label of single record.
         :@param x: single feature vector.
@@ -50,11 +51,12 @@ class KNeighborClassifer(baseModel):
         return labels[counts.argmax()]
 
 
+    @matrix_type_cast
     def predict(self, X):
         """Predict the label of features matrix.
 
         :@param X: features matrix.
-        :type X: np.array(M X N).
+        :type X: np.array(M X N) or list(M X N).
         :return: the label of all features.
         :rtype: np.array(string | int).
         """

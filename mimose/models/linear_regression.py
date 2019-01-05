@@ -1,6 +1,7 @@
 import numpy as np
-from ..utils.abc_models import linearModel
 
+from ..utils.abc_models import linearModel
+from ..utils.preprocessing import matrix_type_cast
 
 class linearRegression(linearModel):
     """Linear Regression Model."""
@@ -14,8 +15,7 @@ class linearRegression(linearModel):
         :type y: the N dimension column vector.
         :return: self.
         """
-        
-        y = y.reshape(-1, 1)
+
         X_ = np.c_[np.ones((X.shape[0], 1)), X]
         self.coef = np.linalg.pinv(X_.T @ X_) @ X_.T @ y
         return self

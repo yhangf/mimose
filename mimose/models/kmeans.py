@@ -2,6 +2,7 @@ import numpy as np
 
 from collections import defaultdict
 from ..utils.base import baseModel
+from ..utils.preprocessing import matrix_type_cast
 
 
 class KMeans(baseModel):
@@ -23,6 +24,7 @@ class KMeans(baseModel):
         self.epslion = epslion
 
 
+    @matrix_type_cast
     def fit(self, X):
         """
         :@param X: raw data matrix.
@@ -47,10 +49,11 @@ class KMeans(baseModel):
         return self
 
 
+    @matrix_type_cast
     def predict(self, X):
         """Return belongs to the category.
         :@param X: unclustered data matrix.
-        :type X: np.array(M X N).
+        :type X: np.array(M X N) or list(M X N).
         :return: belongs to the category.
         :rtype: np.array(M X 1), value in int.
         """

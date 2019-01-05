@@ -21,8 +21,8 @@ class perceptronClassifier(baseModel):
         """
 
         self.max_iter = max_iter
-        self.lr = lr
         self.method = method
+        self.lr = lr
 
 
     def fit(self, X, y):

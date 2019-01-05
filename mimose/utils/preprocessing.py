@@ -1,5 +1,5 @@
 import numpy as np
-
+import functools
 
 class standardScaler:
     """Standardized data."""
@@ -52,3 +52,21 @@ class intervalScaler:
         new_range = ((X - np.min(X)) / (np.max(X) - np.min(X))) *\
                     (self.right_value - self.left_value) + self.left_value
         return new_range
+
+
+def matrix_type_cast(func):
+    """Matrix type conversion decorator."""
+
+    @functools.wraps(func)
+    def wraps(*args, **kwargs):
+        """Variable parameter included self."""
+
+        args = list(args)
+        if len(args) == 3:
+            args[1] = np.atleast_2d(args[1])
+            args[2] = np.atleast_2d(args[2]).T
+        elif len(args) == 2:
+            args[1] = np.atleast_2d(args[1])
+        return func(*args, **kwargs)
+
+    return wraps

@@ -1,5 +1,7 @@
 import numpy as np
 
+from ..utils.preprocessing import matrix_type_cast
+
 
 class PCA:
     """Principal component analysis."""
@@ -12,12 +14,12 @@ class PCA:
 
         self.n_components = n_components
 
-
+    @matrix_type_cast
     def fit_transform(self, X):
         """Get the data after dimension reduction.
 
         :@param X: features matrix.
-        :type X: np.array(M X N).
+        :type X: np.array(M X N) or list(M X N).
         :return: data matrix after dimension reduction.
         :rtype: np.array(M X T, T <= N).
         """

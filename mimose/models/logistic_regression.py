@@ -1,8 +1,10 @@
 import random
 
 import numpy as np
+
 from ..utils.base import baseModel
 from ..utils.func import sigmoid, judge
+from ..utils.preprocessing import matrix_type_cast
 
 
 class logisticRegression(baseModel):
@@ -46,13 +48,14 @@ class logisticRegression(baseModel):
         return self
 
 
+    @matrix_type_cast
     def gradient_descent(self, X, y):
         """Get the weight parameters.
 
         :@param X: features matrix.
-        :type X: the N x M dimension np.array.
+        :type X: the N x M dimension np.array or list.
         :@param y: class label vector.
-        :type y: the N dimension np.array.
+        :type y: the N dimension np.array or list.
         :return: the weight parameters.
         :rtype: the N dimension np.array.
         """
@@ -69,6 +72,7 @@ class logisticRegression(baseModel):
         return weight
 
 
+    @matrix_type_cast
     def SGD(self, X, y):
         """Via Stochastic gradient descent algorithm
            get the weight parameters.
@@ -77,7 +81,7 @@ class logisticRegression(baseModel):
         if batch > X.shape[0]:
             raise Exception("Batch greater than the X dimension!")
 
-        y = y.reshape(-1, 1)
+        # y = y.reshape(-1, 1)
         X_ = np.c_[np.ones((X.shape[0], 1)), X, y]
         weight = np.random.rand(X_.shape[1] - 1, 1) # added a dimension, so subtract one.
         index_list = list(range(X_.shape[0]))
@@ -93,11 +97,12 @@ class logisticRegression(baseModel):
         return weight
 
 
+    @matrix_type_cast
     def predict(self, X):
         """Predict class label.
 
         :@param X: unlabeled features matrix.
-        :type X: the N x M dimension np.array.
+        :type X: the N x M dimension np.array or list.
         :return: class label vector.
         :rtype: vector and value in {0, 1}.
         """
