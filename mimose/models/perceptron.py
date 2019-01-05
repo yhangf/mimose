@@ -62,7 +62,7 @@ class perceptronClassifier(baseModel):
     def dual_method_train(self, X, y):
         """
         :@param X: feature matrix.
-        :type X: np.array(M X N).
+        :type X: np.array(M X N) or list(M X N).
         :@param y: class label.
         :type y: int, value in {-1, +1}
         """
@@ -89,7 +89,7 @@ class perceptronClassifier(baseModel):
     def predict(self, X):
         """
         :@param X: feature matrix.
-        :type X: np.array(M X N).
+        :type X: np.array(M X N) or list(M X N).
         :return: class label.
         :rtype: np.array(M X 1), value in {-1, +1}.
         """
