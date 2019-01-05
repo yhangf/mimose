@@ -2,6 +2,7 @@ import numpy as np
 
 from ..utils.func import rsign
 from ..utils.base import baseModel
+from ..utils.preprocessing import matrix_type_cast
 
 
 class perceptronClassifier(baseModel):
@@ -33,6 +34,7 @@ class perceptronClassifier(baseModel):
         return self
 
 
+    @matrix_type_cast
     def undual_method_train(self, X, y):
         """
         :@param X: feature matrix.
@@ -41,7 +43,6 @@ class perceptronClassifier(baseModel):
         :type y: int, value in {-1, +1}
         """
 
-        y = y.reshape(-1, 1)
         n_samples, n_features = X.shape
         self.weights = np.zeros((n_features, 1))
         self.bias = 0
@@ -57,6 +58,7 @@ class perceptronClassifier(baseModel):
             self.max_iter -= 1
 
 
+    @matrix_type_cast
     def dual_method_train(self, X, y):
         """
         :@param X: feature matrix.
@@ -65,7 +67,6 @@ class perceptronClassifier(baseModel):
         :type y: int, value in {-1, +1}
         """
 
-        y = y.reshape(-1, 1)
         gram = X @ X.T
         n_samples, n_features = X.shape
         alpha = np.zeros((n_samples, 1))
@@ -84,6 +85,7 @@ class perceptronClassifier(baseModel):
         self.weights = X.T @ (alpha * y)
 
 
+    @matrix_type_cast
     def predict(self, X):
         """
         :@param X: feature matrix.

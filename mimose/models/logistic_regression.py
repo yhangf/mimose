@@ -81,7 +81,6 @@ class logisticRegression(baseModel):
         if batch > X.shape[0]:
             raise Exception("Batch greater than the X dimension!")
 
-        # y = y.reshape(-1, 1)
         X_ = np.c_[np.ones((X.shape[0], 1)), X, y]
         weight = np.random.rand(X_.shape[1] - 1, 1) # added a dimension, so subtract one.
         index_list = list(range(X_.shape[0]))
