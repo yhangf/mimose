@@ -17,7 +17,7 @@ class GM11(baseModel):
 
     def fit(self, sequence):
         """Training GM(1,1) model
-
+        
         :@param sequence: raw sequential data.
         :type sequence: np.array(N X 1).
         """
