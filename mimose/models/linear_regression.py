@@ -6,6 +6,7 @@ from ..utils.preprocessing import matrix_type_cast
 class linearRegression(linearModel):
     """Linear Regression Model."""
 
+    @matrix_type_cast
     def fit(self, X, y):
         """Training the linear regression model.
 

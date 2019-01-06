@@ -63,10 +63,20 @@ def matrix_type_cast(func):
 
         args = list(args)
         if len(args) == 3:
-            args[1] = np.atleast_2d(args[1])
-            args[2] = np.atleast_2d(args[2]).T
+            _arg = np.atleast_2d(args[1])
+            if _arg.shape[0] == 1:
+                args[1] = _arg.reshape(-1, 1)
+            else:
+                args[1] = _arg
+            args[2] = np.atleast_1d(args[2]).reshape(-1, 1)
+
         elif len(args) == 2:
-            args[1] = np.atleast_2d(args[1])
+            _arg = np.atleast_2d(args[1])
+            if _arg.shape[0] == 1:
+                args[1] = _arg.reshape(-1, 1)
+            else:
+                args[1] = _arg
+
         return func(*args, **kwargs)
 
     return wraps

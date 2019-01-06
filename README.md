@@ -50,6 +50,7 @@
     - [x] perceptron [[pdf]](https://github.com/yhangf/ML-NOTE/blob/master/pdf/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%AE%97%E6%B3%95.pdf)[[code]](https://github.com/yhangf/mimose/blob/master/mimose/models/perceptron.py)[[知乎]](https://zhuanlan.zhihu.com/p/37134548)
     - [x] knn [[code]](https://github.com/yhangf/mimose/blob/master/mimose/models/knn.py)
     - [x] linear discriminant analysis [[code]](https://github.com/yhangf/mimose/blob/master/mimose/models/lda.py)
+    - [x] naive bayes [[pdf]](https://github.com/yhangf/ML-NOTE/blob/master/pdf/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%AE%97%E6%B3%95.pdf)[[code]](https://github.com/yhangf/mimose/blob/master/mimose/models/naive_bayes.py)[[知乎]](https://zhuanlan.zhihu.com/p/40246165)
 
 * ### Clustering models:tulip:
 

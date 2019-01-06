@@ -1,6 +1,7 @@
 import numpy as np
 
 from ..utils.abc_models import linearModel
+from ..utils.preprocessing import matrix_type_cast
 
 
 class lassoRegression(linearModel):
@@ -20,7 +21,7 @@ class lassoRegression(linearModel):
         self.alpha = alpha
         self.threshold = threshold
 
-
+    @matrix_type_cast
     def fit(self, X, y):
         """Via coordinate descent training
            lasso regression.
@@ -29,7 +30,7 @@ class lassoRegression(linearModel):
         self.coef = self.coordinate_descent(X, y)
         return self
 
-
+    @matrix_type_cast
     def coordinate_descent(self, X, y):
         """Get lasso regression coefficients.
 
@@ -41,7 +42,6 @@ class lassoRegression(linearModel):
         :rtype: the T dimension np.array.
         """
 
-        y = y.reshape(-1, 1)
         X_ = np.c_[np.ones(X.shape[0]), X]
         coef = np.zeros((X_.shape[1], 1))
         while self.n_iter:

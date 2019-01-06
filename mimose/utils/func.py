@@ -59,3 +59,21 @@ def rsign(X):
     """
 
     return np.where(X >= 0, 1, -1)
+
+
+def gaussian(X, mu, sigma):
+    """Gaussian function.
+
+    :@param X: raw matrix data.
+    :type X: np.array(M X N).
+    :@param mu: mean value.
+    :type mu: np.array(N X 1).
+    :@param sigma: variance.
+    :type sigma: np.array(N X 1).
+    :return: the likelihood.
+    :rtype: np.array(N X 1).
+    """
+    square_sigma = sigma @ sigma
+    tmp = -np.exp(np.sum((X - mu) ** 2, axis=1) /
+                       (2 * square_sigma))
+    return tmp / np.sqrt(2 * np.pi * square_sigma)

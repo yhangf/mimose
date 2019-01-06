@@ -1,5 +1,7 @@
 import numpy as np
+
 from ..utils.abc_models import linearModel
+from ..utils.preprocessing import matrix_type_cast
 
 
 class ridgeRegression(linearModel):
@@ -14,6 +16,7 @@ class ridgeRegression(linearModel):
         self.alpha = alpha
 
 
+    @matrix_type_cast
     def fit(self, X, y):
         """Training the ridge regression model.
 
@@ -24,7 +27,6 @@ class ridgeRegression(linearModel):
         :return: self.
         """
 
-        y = y.reshape(-1, 1)
         X_ = np.c_[np.ones((X.shape[0], 1)), X]
         self.coef = np.linalg.inv(X_.T @ X_ + self.alpha *
                                   np.eye(X_.shape[1])) @ X_.T @ y
