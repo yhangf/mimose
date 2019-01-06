@@ -49,8 +49,7 @@
     - [x] logistic regression [[pdf]](https://github.com/yhangf/ML-NOTE/blob/master/pdf/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%95.pdf)[[code]](https://github.com/yhangf/mimose/blob/master/mimose/models/logistic_regression.py)[[知乎]](https://zhuanlan.zhihu.com/p/37020923)
     - [x] perceptron [[pdf]](https://github.com/yhangf/ML-NOTE/blob/master/pdf/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%AE%97%E6%B3%95.pdf)[[code]](https://github.com/yhangf/mimose/blob/master/mimose/models/perceptron.py)[[知乎]](https://zhuanlan.zhihu.com/p/37134548)
     - [x] knn [[code]](https://github.com/yhangf/mimose/blob/master/mimose/models/knn.py)
-    - [ ] svm
-    - [ ] byes
+    - [x] linear discriminant analysis [[code]](https://github.com/yhangf/mimose/blob/master/mimose/models/lda.py)
 
 * ### Clustering models:tulip:
 
