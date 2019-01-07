@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def numerical_gradient(f, x):
     """Calculates the numerical gradient a function.
 
@@ -10,7 +11,7 @@ def numerical_gradient(f, x):
     :return: numerical gradient in the point vector.
     :rtype: np.array(M X N).
     """
-    
+
     h = 1e-4 # 0.0001
     grad = np.zeros_like(x)
     x = x.astype("float")
