@@ -1,6 +1,7 @@
 import numpy as np
 
 from collections import defaultdict
+
 from ..utils.base import baseModel
 from ..utils.preprocessing import matrix_type_cast
 
