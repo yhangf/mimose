@@ -53,6 +53,7 @@ class KMeans(baseModel):
     @matrix_type_cast
     def predict(self, X):
         """Return belongs to the category.
+        
         :@param X: unclustered data matrix.
         :type X: np.array(M X N) or list(M X N).
         :return: belongs to the category.
