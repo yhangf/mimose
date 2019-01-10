@@ -38,6 +38,7 @@ class KNeighborClassifer(baseModel):
     @matrix_type_cast
     def _predict(self, x):
         """Predict the label of single record.
+        
         :@param x: single feature vector.
         :type x: np.array(N X 1 or 1 X N).
         :return: return label value.
