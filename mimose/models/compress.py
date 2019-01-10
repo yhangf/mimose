@@ -14,6 +14,7 @@ class PCA:
 
         self.n_components = n_components
 
+
     @matrix_type_cast
     def fit_transform(self, X):
         """Get the data after dimension reduction.
