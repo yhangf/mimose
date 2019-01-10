@@ -21,6 +21,7 @@ class lassoRegression(linearModel):
         self.alpha = alpha
         self.threshold = threshold
 
+
     @matrix_type_cast
     def fit(self, X, y):
         """Via coordinate descent training
@@ -29,6 +30,7 @@ class lassoRegression(linearModel):
 
         self.coef = self.coordinate_descent(X, y)
         return self
+
 
     @matrix_type_cast
     def coordinate_descent(self, X, y):
