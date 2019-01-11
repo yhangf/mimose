@@ -5,7 +5,7 @@ from ..utils.base import baseModel
 from ..utils.preprocessing import matrix_type_cast
 
 
-class perceptronClassifier(baseModel):
+class PerceptronClassifier(baseModel):
     """Perceptron algorithm."""
 
     def __init__(self, max_iter=100, lr=0.005,
