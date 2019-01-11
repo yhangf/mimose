@@ -4,7 +4,7 @@ from ..utils.abc_models import linearModel
 from ..utils.preprocessing import matrix_type_cast
 
 
-class ridgeRegression(linearModel):
+class RidgeRegression(linearModel):
     """Ridge regression model."""
 
     def __init__(self, alpha=0.5):
