@@ -7,7 +7,7 @@ from ..utils.func import sigmoid, judge
 from ..utils.preprocessing import matrix_type_cast
 
 
-class logisticRegression(baseModel):
+class LogisticRegression(baseModel):
     """Logistic regression model."""
 
     def __init__(self, max_iter=1000, epslion=1e-6,
@@ -36,6 +36,7 @@ class logisticRegression(baseModel):
         self.batch = batch
 
 
+    @matrix_type_cast
     def fit(self, X, y):
         """Via gradient descent training logistic
            regression.
@@ -48,7 +49,6 @@ class logisticRegression(baseModel):
         return self
 
 
-    @matrix_type_cast
     def gradient_descent(self, X, y):
         """Get the weight parameters.
 
@@ -72,7 +72,6 @@ class logisticRegression(baseModel):
         return weight
 
 
-    @matrix_type_cast
     def SGD(self, X, y):
         """Via Stochastic gradient descent algorithm
            get the weight parameters.
