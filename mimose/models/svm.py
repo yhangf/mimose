@@ -5,7 +5,7 @@ from ..utils.preprocessing import matrix_type_cast
 
 
 class SVM(baseModel):
-    """Surport vector machine model."""
+    """Support vector machine model."""
 
     @matrix_type_cast
     def fit(self, X, y):
