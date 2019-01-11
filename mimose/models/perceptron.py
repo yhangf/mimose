@@ -1,11 +1,11 @@
 import numpy as np
 
 from ..utils.func import rsign
-from ..utils.base import baseModel
+from ..utils.base import BaseModel
 from ..utils.preprocessing import matrix_type_cast
 
 
-class PerceptronClassifier(baseModel):
+class PerceptronClassifier(BaseModel):
     """Perceptron algorithm."""
 
     def __init__(self, max_iter=100, lr=0.005,

@@ -1,9 +1,9 @@
 import numpy as np
 
-from ..utils.base import baseModel
+from ..utils.base import BaseModel
 
 
-class GM11(baseModel):
+class GM11(BaseModel):
     """GM11 for grey model"""
 
     def __init__(self, phio=0.5):
@@ -17,7 +17,7 @@ class GM11(baseModel):
 
     def fit(self, sequence):
         """Training GM(1,1) model
-        
+
         :@param sequence: raw sequential data.
         :type sequence: np.array(N X 1).
         """

@@ -1,11 +1,11 @@
 import numpy as np
 
-from ..utils.base import baseModel
+from ..utils.base import BaseModel
 from ..utils.func import gaussian
 from ..utils.preprocessing import matrix_type_cast
 
 
-class gaussianNBClassifier(baseModel):
+class GaussianNBClassifier(BaseModel):
     """Gaussian baive bayes model."""
 
     @matrix_type_cast

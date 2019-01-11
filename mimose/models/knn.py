@@ -1,10 +1,10 @@
 import numpy as np
 
-from ..utils.base import baseModel
+from ..utils.base import BaseModel
 from ..utils.preprocessing import matrix_type_cast
 
 
-class KNeighborClassifer(baseModel):
+class KNeighborClassifer(BaseModel):
     """K-th nearest neighbor classifier."""
 
     def __init__(self, n_neighbor, metric=2):
@@ -38,7 +38,7 @@ class KNeighborClassifer(baseModel):
     @matrix_type_cast
     def _predict(self, x):
         """Predict the label of single record.
-        
+
         :@param x: single feature vector.
         :type x: np.array(N X 1 or 1 X N).
         :return: return label value.

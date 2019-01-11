@@ -1,10 +1,10 @@
 import numpy as np
 
-from ..utils.abc_models import linearModel
+from ..utils.abc_models import LinearModel
 from ..utils.preprocessing import matrix_type_cast
 
 
-class LassoRegression(linearModel):
+class LassoRegression(LinearModel):
     """Lasso regression model."""
 
     def __init__(self, n_iter=1000, alpha=0.5, threshold=0.1):

@@ -1,9 +1,9 @@
 import numpy as np
 
-from ..utils.abc_models import linearModel
+from ..utils.abc_models import LinearModel
 from ..utils.preprocessing import matrix_type_cast
 
-class LinearRegression(linearModel):
+class LinearRegression(LinearModel):
     """Linear Regression Model."""
 
     @matrix_type_cast

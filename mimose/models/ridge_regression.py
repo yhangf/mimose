@@ -1,10 +1,10 @@
 import numpy as np
 
-from ..utils.abc_models import linearModel
+from ..utils.abc_models import LinearModel
 from ..utils.preprocessing import matrix_type_cast
 
 
-class RidgeRegression(linearModel):
+class RidgeRegression(LinearModel):
     """Ridge regression model."""
 
     def __init__(self, alpha=0.5):

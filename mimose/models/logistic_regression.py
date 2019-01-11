@@ -2,12 +2,12 @@ import random
 
 import numpy as np
 
-from ..utils.base import baseModel
+from ..utils.base import BaseModel
 from ..utils.func import sigmoid, judge
 from ..utils.preprocessing import matrix_type_cast
 
 
-class LogisticRegression(baseModel):
+class LogisticRegression(BaseModel):
     """Logistic regression model."""
 
     def __init__(self, max_iter=1000, epslion=1e-6,

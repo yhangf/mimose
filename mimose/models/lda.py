@@ -1,10 +1,10 @@
 import numpy as np
 
-from ..utils.base import baseModel
+from ..utils.base import BaseModel
 from ..utils.preprocessing import matrix_type_cast
 
 
-class LinearDiscriminantAnalysis(baseModel):
+class LinearDiscriminantAnalysis(BaseModel):
     """"Linear discriminant analysis model."""
 
     @matrix_type_cast

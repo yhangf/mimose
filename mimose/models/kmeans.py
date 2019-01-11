@@ -2,11 +2,11 @@ import numpy as np
 
 from collections import defaultdict
 
-from ..utils.base import baseModel
+from ..utils.base import BaseModel
 from ..utils.preprocessing import matrix_type_cast
 
 
-class KMeans(baseModel):
+class KMeans(BaseModel):
     """K-means algorithm."""
 
     def __init__(self, *, n_clusters, max_iter=200,
@@ -53,7 +53,7 @@ class KMeans(baseModel):
     @matrix_type_cast
     def predict(self, X):
         """Return belongs to the category.
-        
+
         :@param X: unclustered data matrix.
         :type X: np.array(M X N) or list(M X N).
         :return: belongs to the category.

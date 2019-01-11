@@ -1,7 +1,7 @@
 from abc import ABCMeta, abstractmethod
 
 
-class baseModel(metaclass=ABCMeta):
+class BaseModel(metaclass=ABCMeta):
     """Abstract base class of all models."""
 
     @abstractmethod

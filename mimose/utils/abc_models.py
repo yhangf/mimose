@@ -1,8 +1,10 @@
 import numpy as np
-from .base import baseModel
+
+from .base import BaseModel
+from .preprocessing import matrix_type_cast
 
 
-class linearModel(baseModel):
+class LinearModel(BaseModel):
     """Abstract base class of Linear Model."""
 
     def fit(self, X, y):
@@ -10,6 +12,7 @@ class linearModel(baseModel):
         pass
 
 
+    @matrix_type_cast
     def predict(self, X):
         if not hasattr(self, "coef"):
             raise Exception("Please run `fit` before predict!")
