@@ -51,7 +51,7 @@
     - [x] knn [[code]](https://github.com/yhangf/mimose/blob/master/mimose/models/knn.py)
     - [x] linear discriminant analysis [[code]](https://github.com/yhangf/mimose/blob/master/mimose/models/lda.py)
     - [x] naive bayes [[pdf]](https://github.com/yhangf/ML-NOTE/blob/master/pdf/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%AE%97%E6%B3%95.pdf)[[code]](https://github.com/yhangf/mimose/blob/master/mimose/models/naive_bayes.py)[[朴素贝叶斯算法]](https://zhuanlan.zhihu.com/p/40246165)
-    - [x] svm [[pdf]](https://github.com/yhangf/ML-NOTE/blob/master/pdf/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA(%E4%B8%8B%E7%AF%87).pdf)[[code]](https://github.com/yhangf/mimose/blob/master/mimose/models/svm.py)[[支持向量机上篇]](https://zhuanlan.zhihu.com/p/39219534)[[支持向量机(下篇)]](https://zhuanlan.zhihu.com/p/47806581)
+    - [x] svm [[pdf]](https://github.com/yhangf/ML-NOTE/blob/master/pdf/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA(%E4%B8%8B%E7%AF%87).pdf)[[code]](https://github.com/yhangf/mimose/blob/master/mimose/models/svm.py)[[支持向量机(上篇)]](https://zhuanlan.zhihu.com/p/39219534)[[支持向量机(下篇)]](https://zhuanlan.zhihu.com/p/47806581)
 
 * ### Clustering models:tulip:
 
