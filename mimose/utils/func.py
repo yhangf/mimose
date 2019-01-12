@@ -77,3 +77,42 @@ def gaussian(X, mu, sigma):
     tmp = -np.exp(np.sum((X - mu) ** 2, axis=1) /
                        (2 * square_sigma))
     return tmp / np.sqrt(2 * np.pi * square_sigma)
+
+
+class LinearKernel:
+    """Linear kernel function."""
+
+    def __call__(self, x, y):
+        return x.T @ y
+
+
+class PolyKernel:
+    """Polynomial kernel function."""
+
+    def __init__(self, degree):
+        """
+        :@param degree: the power of a polynomial function.
+        :type degree: int.
+        """
+
+        self.degree = degree
+
+
+    def __call__(self, x, y):
+        return (x.T @ y) ** self.degree
+
+
+class RBF:
+    """Radial basis kernel function."""
+
+    def __init__(self, sigma):
+        """
+        :@param sigma: parameter for RBF kernel.
+        :type sigma: float.
+        """
+
+        slef.sigma = sigma
+
+
+    def __init__(self, x, y):
+        return np.exp(-self.gamma * np.linalg.norm(x, y) ** 2)
