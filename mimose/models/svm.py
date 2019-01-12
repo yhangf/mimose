@@ -143,6 +143,7 @@ class SVM(BaseModel):
         if(y_i != y_j):
             return (max(0, alpha_prime_j - alpha_prime_i),
                     min(C, C - alpha_prime_i + alpha_prime_j))
+
         else:
             return (max(0, alpha_prime_i + alpha_prime_j - C),
                     min(C, alpha_prime_i + alpha_prime_j))
@@ -150,6 +151,7 @@ class SVM(BaseModel):
 
     def get_rnd_int(self, a, b, z):
         i = z
+
         while i == z:
             i = np.random.randint(a, b)
         return i
