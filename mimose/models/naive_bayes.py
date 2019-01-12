@@ -23,7 +23,7 @@ class GaussianNBClassifier(BaseModel):
         self.var = np.zeros((self.classes_count.shape[0],
                              X.shape[1]), dtype=np.float64)
         for i, label in enumerate(self.classes):
-            x_i = X[y == label]
+            x_i = X[(y == label).flatten()]
             self.mean[i, :] = np.mean(x_i, axis=0)
             self.var[i, :] = np.var(x_i, axis=0)
 
