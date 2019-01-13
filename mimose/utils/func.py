@@ -114,5 +114,5 @@ class RBF:
         slef.sigma = sigma
 
 
-    def __init__(self, x, y):
+    def __call__(self, x, y):
         return np.exp(-self.gamma * np.linalg.norm(x, y) ** 2)
