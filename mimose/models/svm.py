@@ -82,7 +82,10 @@ class SVM(BaseModel):
             for j in range(0, n):
                 i = self.get_rnd_int(0, n-1, j) # Get random int i~=j
                 x_i, x_j, y_i, y_j = X[i, :], X[j, :], y[i], y[j]
-                k_ij = kernel(x_i.T, x_i.T) + kernel(x_j.T, x_j.T) - 2 * kernel(x_i.T, x_j.T)
+                k_ij = (kernel(x_i.T, x_i.T)
+                         + kernel(x_j.T, x_j.T)
+                        - 2 * kernel(x_i.T, x_j.T))
+
                 if k_ij == 0:
                     continue
                 alpha_prime_j, alpha_prime_i = alpha[j], alpha[i]
