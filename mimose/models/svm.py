@@ -154,7 +154,6 @@ class SVM(BaseModel):
 
     def get_rnd_int(self, a, b, z):
         i = z
-
         while i == z:
             i = np.random.randint(a, b)
         return i
